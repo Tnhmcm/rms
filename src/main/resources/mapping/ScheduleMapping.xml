@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caacetc.rms.mapper.ScheduleMapper">
+
+    <resultMap id="BaseResultMap" type="com.caacetc.rms.model.Schedule">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+        <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+        <result column="memo" jdbcType="VARCHAR" property="memo" />
+        <result column="staff_id" jdbcType="INTEGER" property="staffId"/>
+    </resultMap>
+
+    <select id="findById" resultType="com.caacetc.rms.model.Schedule" resultMap="BaseResultMap">
+        select * from biz_schedule where id = #{id}
+    </select>
+
+</mapper>
